@@ -437,6 +437,41 @@
       color: #1a1206
     }
 
+    .badge.live {
+      background: rgba(34, 150, 120, .9);
+      color: #eafff6
+    }
+
+    .course-meta {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin: 12px 0 4px;
+      font-size: .82rem;
+      color: var(--muted);
+    }
+
+    .course-meta li {
+      display: flex;
+      gap: 6px
+    }
+
+    .course-meta li b {
+      color: var(--gold-soft);
+      font-weight: 600;
+      flex-shrink: 0
+    }
+
+    .section-sub-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: .86rem;
+      max-width: 640px;
+      margin: -28px auto 40px;
+      font-style: italic
+    }
+
     .price-tag {
       position: absolute;
       bottom: 14px;
@@ -1335,7 +1370,7 @@
       <div class="grid">
 
         <!-- 1. Beginner -->
-        <article class="card reveal">
+        <article class="card reveal" data-key="beginner">
           <div class="thumb">
             <span class="badge">Beginner</span>
             <img src="images/221f368322aa50b5adb8d520bdf3bbd0.png"
@@ -1355,7 +1390,7 @@
         </article>
 
         <!-- 2. Advance -->
-        <article class="card reveal">
+        <article class="card reveal" data-key="advance">
           <div class="thumb">
             <span class="badge adv">Advanced</span>
             <img src="images/51960be84230e86eef749cd77a2fa332.png"
@@ -1375,7 +1410,7 @@
         </article>
 
         <!-- 3. Candle Wax -->
-        <article class="card reveal">
+        <article class="card reveal" data-key="candle">
           <div class="thumb">
             <span class="badge">Divination</span>
             <img src="images/dfb6d63143f19aac3492408c13ab48a1.jpg" alt="Glowing candles — Candle Wax Reading Course"
@@ -1395,7 +1430,7 @@
         </article>
 
         <!-- 4. Runes -->
-        <article class="card reveal">
+        <article class="card reveal" data-key="runes">
           <div class="thumb">
             <span class="badge">Ancient Craft</span>
             <img src="images/e9d8e5d2ca0a71a727d32b6f406ce664.png" alt="Glowing rune stone — Runes Reading Course"
@@ -1415,7 +1450,7 @@
         </article>
 
         <!-- 5. Dice -->
-        <article class="card reveal">
+        <article class="card reveal" data-key="dice">
           <div class="thumb">
             <span class="badge">Quick Answers</span>
             <img src="images/b3367a022978047af5b1c85224883ec6.png"
@@ -1429,6 +1464,194 @@
             <div class="cta-row">
               <a class="btn btn-primary btn-enrol" href="https://rzp.io/rzp/pqA8ayy" target="_blank"
                 rel="noopener">Enrol Now</a>
+              <button type="button" class="btn btn-ghost btn-details">Course Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- </div>
+    </div>
+  </section> -->
+
+        <!-- ============ UPCOMING LIVE BATCH COURSES ============ -->
+        <!-- <section class="courses" id="live-batches" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Upcoming <span>Live Batches</span></h2>
+        <p>Live, instructor-led classes with a fixed schedule and seat limit — different from the self-paced recorded
+          courses above.</p>
+      </div>
+      <p class="section-sub-note reveal">Full descriptions for these batches are being finalised and will be added
+        shortly. Dates below are provisional — please confirm before booking.</p>
+
+      <div class="grid"> -->
+
+        <!-- 6. Heal WITHIN -->
+        <article class="card reveal" data-key="healwithin">
+          <div class="thumb">
+            <span class="badge live">Offline · Membership</span>
+            <img src="images/01_Heal_WITHIN.png" alt="Heal WITHIN offline healing class" loading="lazy" />
+            <span class="price-tag">₹15,000</span>
+          </div>
+          <div class="body">
+            <h3>Heal WITHIN (Offline)</h3>
+            <p><!-- TODO: replace with client's course description --> A year-long offline healing membership. Weekly
+              in-person sessions to work on healing from within, held every Sunday.</p>
+            <ul class="course-meta">
+              <li><b>Starts:</b> 11 Oct</li>
+              <li><b>Schedule:</b> Sun, 4:00 PM – 7:00 PM</li>
+              <li><b>Duration:</b> 1 year membership</li>
+              <li><b>Location:</b> <!-- TODO: client to confirm venue --> To be confirmed</li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn btn-primary btn-enrol" href="#" target="_blank" rel="noopener">Register Interest</a>
+              <button type="button" class="btn btn-ghost btn-details">Course Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Tarot Workshop -->
+        <article class="card reveal" data-key="tarotworkshop">
+          <div class="thumb">
+            <span class="badge live">Workshop</span>
+            <img src="images/02_Tarot_Workshop.png" alt="Tarot Workshop, one-day introduction" loading="lazy" />
+            <span class="price-tag">₹5,000</span>
+          </div>
+          <div class="body">
+            <h3>Tarot Workshop</h3>
+            <p><!-- TODO: replace with client's course description --> A one-day introductory workshop into the world of
+              tarot reading.</p>
+            <ul class="course-meta">
+              <li><b>Date:</b> 11 Oct (Sunday)</li>
+              <li><b>Schedule:</b> 12:30 PM – 2:30 PM</li>
+              <li><b>Duration:</b> 1 day, 2 hours</li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn btn-primary btn-enrol" href="#" target="_blank" rel="noopener">Register Interest</a>
+              <button type="button" class="btn btn-ghost btn-details">Course Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Tarot: Beginning to Advance (live batch) -->
+        <article class="card reveal" data-key="tarotBatchBeginAdv">
+          <div class="thumb">
+            <span class="badge live">Live Batch</span>
+            <img src="images/03_Tarot_Beginning_to_Advance.png" alt="Tarot Beginning to Advance live batch course"
+              loading="lazy" />
+            <span class="price-tag">₹1,00,000</span>
+          </div>
+          <div class="body">
+            <h3>Tarot: Beginning to Advance</h3>
+            <p><!-- TODO: replace with client's course description --> A full live-batch journey from tarot basics to
+              advanced reading, with exams and practice sessions.</p>
+            <ul class="course-meta">
+              <li><b>Dates:</b> 23 Oct – 7 Feb</li>
+              <li><b>Schedule:</b> Fri &amp; Sat 8–10 PM, Sun 12–2 PM</li>
+              <li><b>Duration:</b> 4 months</li>
+              <li><b>Includes:</b> Exams, practice, Q&amp;A, 1-year access to recorded videos</li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn btn-primary btn-enrol" href="#" target="_blank" rel="noopener">Register Interest</a>
+              <button type="button" class="btn btn-ghost btn-details">Course Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Tarot Pro (live batch) -->
+        <article class="card reveal" data-key="tarotPro">
+          <div class="thumb">
+            <span class="badge live">Live Batch</span>
+            <img src="images/04_Tarot_Pro.png" alt="Tarot Pro live batch course" loading="lazy" />
+            <span
+              class="price-tag"><!-- TODO: confirm with client whether this is ₹1L or ₹2L, see note in modal -->₹1,00,000</span>
+          </div>
+          <div class="body">
+            <h3>Tarot Pro</h3>
+            <p><!-- TODO: replace with client's course description --> The professional continuation for graduates of
+              the Beginning to Advance batch.</p>
+            <ul class="course-meta">
+              <li><b>Dates:</b> 12 Feb – 11 Apr</li>
+              <li><b>Schedule:</b> Fri &amp; Sat 8–10 PM, Sun 12–2 PM</li>
+              <li><b>Duration:</b> 2 months (6 months total with Beginning to Advance)</li>
+              <li><b>Includes:</b> Exams, practice, Q&amp;A, 1-year access to recorded videos</li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn btn-primary btn-enrol" href="#" target="_blank" rel="noopener">Register Interest</a>
+              <button type="button" class="btn btn-ghost btn-details">Course Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Runes: Beginning to Advance (live batch) -->
+        <article class="card reveal" data-key="runesBatch">
+          <div class="thumb">
+            <span class="badge live">Live Batch</span>
+            <img src="images/05_Runes_Beginning_to_Advance.png" alt="Runes Beginning to Advance live batch course"
+              loading="lazy" />
+            <span class="price-tag">₹75,000</span>
+          </div>
+          <div class="body">
+            <h3>Runes: Beginning to Advance</h3>
+            <p><!-- TODO: replace with client's course description --> A full live-batch journey through rune reading,
+              basics to advanced.</p>
+            <ul class="course-meta">
+              <li><b>Dates:</b> 24 Apr – 11 Jul</li>
+              <li><b>Schedule:</b> Sat 8–10 PM, Sun 12–2 PM</li>
+              <li><b>Duration:</b> 3 months</li>
+              <li><b>Includes:</b> Exams, practice, Q&amp;A, 1-year access to recorded videos</li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn btn-primary btn-enrol" href="#" target="_blank" rel="noopener">Register Interest</a>
+              <button type="button" class="btn btn-ghost btn-details">Course Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Dice: Beginning to Advance (live batch) -->
+        <article class="card reveal" data-key="diceBatch">
+          <div class="thumb">
+            <span class="badge live">Live Batch</span>
+            <img src="images/06_Dice_Beginning_to_Advance.png" alt="Dice Beginning to Advance live batch course"
+              loading="lazy" />
+            <span class="price-tag">₹1,00,000</span>
+          </div>
+          <div class="body">
+            <h3>Dice: Beginning to Advance</h3>
+            <p><!-- TODO: replace with client's course description --> A full live-batch journey through dice reading,
+              basics to advanced.</p>
+            <ul class="course-meta">
+              <li><b>Dates:</b> 24 Jul – 10 Oct</li>
+              <li><b>Schedule:</b> Sat 8–10 PM, Sun 12–2 PM</li>
+              <li><b>Duration:</b> 3 months</li>
+              <li><b>Includes:</b> Exams, practice, Q&amp;A, 1-year access to recorded videos</li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn btn-primary btn-enrol" href="#" target="_blank" rel="noopener">Register Interest</a>
+              <button type="button" class="btn btn-ghost btn-details">Course Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. Candle Wax Full Course (live batch) -->
+        <article class="card reveal" data-key="candleBatch">
+          <div class="thumb">
+            <span class="badge live">Live Batch</span>
+            <img src="images/07_Candle_Wax_Full_Course.png" alt="Candle Wax full live batch course" loading="lazy" />
+            <span class="price-tag">₹1,00,000</span>
+          </div>
+          <div class="body">
+            <h3>Candle Wax Full Course</h3>
+            <p><!-- TODO: replace with client's course description --> A full live-batch journey through candle wax
+              reading, from basics to advanced.</p>
+            <ul class="course-meta">
+              <li><b>Dates:</b> 6 Nov – 26 Dec</li>
+              <li><b>Schedule:</b> Sat 8–10 PM, Sun 12–2 PM</li>
+              <li><b>Duration:</b> ~2 months</li>
+              <li><b>Includes:</b> Exams, practice, Q&amp;A, 1-year access to recorded videos</li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn btn-primary btn-enrol" href="#" target="_blank" rel="noopener">Register Interest</a>
               <button type="button" class="btn btn-ghost btn-details">Course Details</button>
             </div>
           </div>
@@ -1651,19 +1874,76 @@
         pay: 'https://rzp.io/rzp/pqA8ayy',
         learn: ['How to energise your own energy', 'How to buy your dice', 'Cleansing before a reading', 'Basic keywords & meaning of the dice', 'How to read the dice', 'How to perform basic spreads', 'How to give a reading'],
         need: ['Dice set (available on Amazon)', 'Notebook & pen for your notes']
+      },
+      /* ---- Live batch courses (schedule confirmed by client; full descriptions pending) ---- */
+      healwithin: {
+        accent: '#2c9678', badge: 'Offline · Membership', price: '₹15,000',
+        title: 'Heal WITHIN (Offline)',
+        img: 'images/221f368322aa50b5adb8d520bdf3bbd0.png',
+        pay: '#',
+        learn: ['TODO: add details once client sends the course description'],
+        need: ['TODO: add details once client sends the course description'],
+        info: '<b>Offline, in-person class</b> — held weekly every Sunday for <b>one year</b> as part of a membership. Venue to be confirmed.'
+      },
+      tarotworkshop: {
+        accent: '#8b5cf6', badge: 'Workshop', price: '₹5,000',
+        title: 'Tarot Workshop',
+        img: 'images/221f368322aa50b5adb8d520bdf3bbd0.png',
+        pay: '#',
+        learn: ['TODO: add details once client sends the course description'],
+        need: ['TODO: add details once client sends the course description'],
+        info: 'A single-day, 2-hour introductory <b>workshop</b> — one-time session, no ongoing access.'
+      },
+      tarotBatchBeginAdv: {
+        accent: '#e6c063', badge: 'Live Batch', price: '₹1,00,000',
+        title: 'Tarot: Beginning to Advance',
+        img: 'images/51960be84230e86eef749cd77a2fa332.png',
+        pay: '#',
+        learn: ['TODO: add details once client sends the course description'],
+        need: ['TODO: add details once client sends the course description'],
+        info: '<b>Live, instructor-led batch</b> — 4 months, Fri &amp; Sat 8–10 PM and Sun 12–2 PM. Includes exams, practice, Q&amp;A and <b>1 year</b> of recorded video access.'
+      },
+      tarotPro: {
+        accent: '#e6c063', badge: 'Live Batch', price: '₹1,00,000',
+        title: 'Tarot Pro',
+        img: 'images/51960be84230e86eef749cd77a2fa332.png',
+        pay: '#',
+        learn: ['TODO: add details once client sends the course description'],
+        need: ['TODO: add details once client sends the course description'],
+        info: '<b>Live, instructor-led batch</b> — 2 months (6 months total with the Beginning to Advance batch), same weekly schedule. <b>Note:</b> price shown assumes ₹1L standalone — confirm with client whether Pro is ₹1L on its own or ₹2L cumulative with the prior batch.'
+      },
+      runesBatch: {
+        accent: '#ff5a3c', badge: 'Live Batch', price: '₹75,000',
+        title: 'Runes: Beginning to Advance',
+        img: 'images/e9d8e5d2ca0a71a727d32b6f406ce664.png',
+        pay: '#',
+        learn: ['TODO: add details once client sends the course description'],
+        need: ['TODO: add details once client sends the course description'],
+        info: '<b>Live, instructor-led batch</b> — 3 months, Sat 8–10 PM and Sun 12–2 PM. Includes exams, practice, Q&amp;A and <b>1 year</b> of recorded video access.'
+      },
+      diceBatch: {
+        accent: '#e24b6a', badge: 'Live Batch', price: '₹1,00,000',
+        title: 'Dice: Beginning to Advance',
+        img: 'images/b3367a022978047af5b1c85224883ec6.png',
+        pay: '#',
+        learn: ['TODO: add details once client sends the course description'],
+        need: ['TODO: add details once client sends the course description'],
+        info: '<b>Live, instructor-led batch</b> — 3 months, Sat 8–10 PM and Sun 12–2 PM. Includes exams, practice, Q&amp;A and <b>1 year</b> of recorded video access.'
+      },
+      candleBatch: {
+        accent: '#ff9d4d', badge: 'Live Batch', price: '₹1,00,000',
+        title: 'Candle Wax Full Course',
+        img: 'images/dfb6d63143f19aac3492408c13ab48a1.jpg',
+        pay: '#',
+        learn: ['TODO: add details once client sends the course description'],
+        need: ['TODO: add details once client sends the course description'],
+        info: '<b>Live, instructor-led batch</b> — ~2 months, Sat 8–10 PM and Sun 12–2 PM. Includes exams, practice, Q&amp;A and <b>1 year</b> of recorded video access.'
       }
     };
-    function courseKeyFrom(text) {
-      const t = (text || '').toLowerCase();
-      if (t.includes('advance')) return 'advance';
-      if (t.includes('beginner')) return 'beginner';
-      if (t.includes('candle')) return 'candle';
-      if (t.includes('rune')) return 'runes';
-      if (t.includes('dice')) return 'dice';
-      return null;
-    }
+    const DEFAULT_INFO = '<b>Online course</b> — video recordings you can watch anywhere, anytime, with <b>1 year of access</b>. A <b>certificate</b> is issued on completion.';
     const overlay = document.getElementById('courseModal');
     const dialog = document.getElementById('cmDialog');
+    const cmInfoEl = document.querySelector('.modal-info');
     let lastFocus = null;
     function fillList(el, arr) { el.innerHTML = arr.map(x => '<li>' + x + '</li>').join(''); }
     function openCourse(key) {
@@ -1675,7 +1955,9 @@
       const img = document.getElementById('cmImg'); img.src = c.img; img.alt = c.title;
       fillList(document.getElementById('cmLearn'), c.learn);
       fillList(document.getElementById('cmNeed'), c.need);
+      if (cmInfoEl) cmInfoEl.innerHTML = c.info || DEFAULT_INFO;
       document.getElementById('cmPay').href = c.pay;
+      document.getElementById('cmPay').textContent = c.pay === '#' ? 'Register Interest ✨' : 'Enrol Now ✨';
       overlay.classList.add('open');
       overlay.setAttribute('aria-hidden', 'false');
       document.body.classList.add('no-scroll');
@@ -1692,7 +1974,7 @@
     document.querySelectorAll('.btn-details').forEach(b => {
       b.addEventListener('click', () => {
         const card = b.closest('.card');
-        const key = courseKeyFrom(card && card.querySelector('h3') ? card.querySelector('h3').textContent : '');
+        const key = card ? card.dataset.key : null;
         openCourse(key);
       });
     });
@@ -1701,11 +1983,17 @@
     overlay.addEventListener('click', e => { if (e.target === overlay) closeCourse(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeCourse(); });
 
-    /* wire each card's Enrol Now to its Razorpay link */
+    /* wire each card's Enrol Now / Register Interest link to its target */
     document.querySelectorAll('.btn-enrol').forEach(a => {
       const card = a.closest('.card');
-      const key = courseKeyFrom(card && card.querySelector('h3') ? card.querySelector('h3').textContent : '');
-      if (key && COURSES[key]) a.href = COURSES[key].pay;
+      const key = card ? card.dataset.key : null;
+      if (key && COURSES[key]) {
+        a.href = COURSES[key].pay;
+        if (COURSES[key].pay === '#') {
+          a.textContent = 'Register Interest';
+          a.removeAttribute('target');
+        }
+      }
     });
   </script>
 </body>

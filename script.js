@@ -247,3 +247,93 @@ document.querySelectorAll('.btn-form').forEach(a => {
         a.href = COURSES[key].form;
     }
 });
+
+/* ---------- Post-payment return banner ---------- */
+/*
+   IMPORTANT: This site cannot actually confirm a Razorpay payment succeeded —
+   that only happens on Razorpay's side. What this does is a best-effort nudge:
+   remember which course someone clicked "Pay & Enrol" for, and when they come
+   back to this tab (after paying / closing the payment tab), prompt them to
+   finish registration for that specific course.
+
+   For a guaranteed, automatic flow, set a "Redirect URL" on each Razorpay
+   Payment Link (in the Razorpay dashboard) pointing straight to that course's
+   Google Form — Razorpay only fires that redirect after a real successful
+   payment.
+*/
+(function () {
+    const STORAGE_KEY = 'pendingEnrolCourse';
+    const MIN_AWAY_MS = 4000;     // ignore accidental quick tab-flicks
+    const EXPIRE_MS = 30 * 60 * 1000; // forget intent after 30 minutes
+
+    const banner = document.getElementById('returnBanner');
+    const courseNameEl = document.getElementById('returnBannerCourse');
+    const formBtn = document.getElementById('returnBannerFormBtn');
+    const closeBtn = document.getElementById('returnBannerClose');
+    const dismissBtn = document.getElementById('returnBannerDismiss');
+
+    function setPending(key) {
+        try {
+            sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ key, t: Date.now() }));
+        } catch (e) { /* storage unavailable, ignore */ }
+    }
+    function getPending() {
+        try {
+            const raw = sessionStorage.getItem(STORAGE_KEY);
+            if (!raw) return null;
+            const data = JSON.parse(raw);
+            if (!data || !data.key || (Date.now() - data.t) > EXPIRE_MS) return null;
+            return data;
+        } catch (e) { return null; }
+    }
+    function clearPending() {
+        try { sessionStorage.removeItem(STORAGE_KEY); } catch (e) { }
+    }
+    function hideBanner() {
+        if (banner) banner.classList.remove('show');
+    }
+    function showBannerFor(key) {
+        const c = COURSES[key];
+        if (!c || !banner) return;
+        courseNameEl.textContent = c.title;
+        formBtn.href = c.form || '#';
+        banner.classList.add('show');
+    }
+
+    // record intent whenever a Pay & Enrol control is used (cards or modal)
+    function markIntent(key) {
+        if (key && COURSES[key]) setPending(key);
+    }
+    document.querySelectorAll('.btn-enrol').forEach(a => {
+        a.addEventListener('click', () => {
+            const card = a.closest('.card');
+            markIntent(card ? card.dataset.key : null);
+        });
+    });
+    const modalPayBtn = document.getElementById('cmPay');
+    if (modalPayBtn) {
+        modalPayBtn.addEventListener('click', () => {
+            const titleEl = document.getElementById('cmTitle');
+            const match = Object.keys(COURSES).find(k => COURSES[k].title === (titleEl && titleEl.textContent));
+            markIntent(match);
+        });
+    }
+
+    // when the user returns to this tab, check if enough time has passed
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState !== 'visible') return;
+        const pending = getPending();
+        if (!pending) return;
+        if (Date.now() - pending.t < MIN_AWAY_MS) return;
+        showBannerFor(pending.key);
+    });
+
+    if (formBtn) {
+        formBtn.addEventListener('click', () => {
+            clearPending();
+            hideBanner();
+        });
+    }
+    if (closeBtn) closeBtn.addEventListener('click', () => { hideBanner(); });
+    if (dismissBtn) dismissBtn.addEventListener('click', () => { clearPending(); hideBanner(); });
+})();
